@@ -1,5 +1,5 @@
 from distutils.log import debug
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 app = Flask(__name__)
 
 posts= [
@@ -54,9 +54,28 @@ def games():
 def login():
     return render_template('login.html')
 
-@app.route('/register')
+@app.route('/register', methods = ['POST', 'GET'])
 def register():
-    return render_template('register.html')
+    if request.method == 'POST':
+        try:
+            new_username = request.form['new_username']
+            new_password = request.form['new_password']
+
+            with sql.connect("database.db") as connection:
+                cur = connection.cursor()
+                cur.execute("INSERT INTO user (username, password) VALUES (?,?)", (new_username, new_password))
+
+                connection.commit()
+                message = "New User Added Succesfully"
+                
+        except:
+            connection.rollback()
+            message = "Inserion Failed, Rollback Complete"
+
+        finally:
+            return render_template('new_user_added.html', message = message)
+            connection.close()
+
 
 if __name__ == '__main__':
     app.run(debug = True)
