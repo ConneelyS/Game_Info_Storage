@@ -19,17 +19,34 @@ posts= [
         "score": "70",
         "developer": "Epic Games",
         "description": "Building game with lots of players"
+    },
+
+    {
+        "name": "Borderlands 2",
+        "release_year": "2014",
+        "age_rating": "18",
+        "score": "95",
+        "developer": "Gearbox Software",
+        "description": "Borderlands 2 is an open shooter game with even more loot"
     }
 
 ]
 
 @app.route('/')
-def home();
+def home():
     return render_template('home.html')
 
 @app.route('/games')
-def games();
+def games():
     return render_template('games_list.html', posts = posts)
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+@app.route('/register')
+def register():
+    return render_template('register.html')
 
 if __name__ == '__main__':
     app.run(debug = True)
