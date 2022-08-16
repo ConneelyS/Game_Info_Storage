@@ -28,7 +28,17 @@ posts= [
         "score": "95",
         "developer": "Gearbox Software",
         "description": "Borderlands 2 is an open shooter game with even more loot"
+    },
+
+    {
+        "name": "Call of Duty 4: Modern Warfare",
+        "release_year": "2007",
+        "age_rating": "15",
+        "score": "80",
+        "developer": "Activision",
+        "description": "Modern Warfare is a first-person shooter game"
     }
+
 
 ]
 
