@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Game</title>
+</head>
+<body>
+    <h1>Register a New Game</h1>
+    <form action="/add_new_game" method="POST">
+
+        <!-- <table>
+            <tr><td>Name</td><td><input type="text" name="name_game_name"></td><tr>
+            <tr><td>Release Year</td><td><input type="text" name="release_year"></td></tr>
+        </table> -->
+
+        <p>
+            <p>Please Enter the Name of the Game</p>
+            <input type="text" name="new_game_name">
+        </p>
+        <p>
+            <p>Please Enter a Release Year</p>
+            <input type="integer" name="release_year">
+        </p>
+        <p>
+            <p>Please Enter an Age Rating</p>
+            <input type="integer" name="age_rating">
+        </p>
+        <p>
+            <p>Please Enter a Score</p>
+            <input type="integer" name="score_rating">
+        </p>
+        <p>
+            <p>Please Enter a Developer</p>
+            <input type="text" name="developer">
+        </p>
+        <p>
+            <p>Please Enter a Description</p>
+            <input type="text" name="description">
+        </p>
+        <button type="submit" name="login">Add New Game</button>
+    </form>
+</body>
+</html>
